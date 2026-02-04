@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Academic Profile</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #1a1a2e;
+        --accent: #c74b50;
+        --text: #2d2d2d;
+        --light: #f8f9fa;
+        --border: #e0e0e0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans 3", sans-serif;
+        line-height: 1.7;
+        color: var(--text);
+        background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 30px;
+        animation: fadeIn 0.8s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      header {
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid var(--accent);
+      }
+
+      h1 {
+        font-family: "Crimson Pro", serif;
+        font-size: 3em;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 15px;
+        font-size: 1.05em;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text);
+        transition: color 0.3s;
+      }
+
+      .contact-item:hover {
+        color: var(--accent);
+      }
+
+      .contact-item a {
+        color: inherit;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s;
+      }
+
+      .contact-item a:hover {
+        border-bottom-color: var(--accent);
+      }
+
+      section {
+        margin-bottom: 50px;
+        animation: slideIn 0.6s ease-out backwards;
+      }
+
+      section:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      section:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      section:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      h2 {
+        font-family: "Crimson Pro", serif;
+        font-size: 1.8em;
+        color: var(--primary);
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .bio {
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: var(--text);
+      }
+
+      .publication,
+      .manuscript {
+        margin-bottom: 25px;
+        padding: 20px;
+        background: white;
+        border-left: 3px solid var(--accent);
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .publication:hover,
+      .manuscript:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .pub-title {
+        font-weight: 600;
+        font-size: 1.1em;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+
+      .pub-authors {
+        color: var(--text);
+        margin-bottom: 5px;
+      }
+
+      .pub-venue {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 5px;
+      }
+
+      .pub-details {
+        color: #888;
+        font-size: 0.95em;
+      }
+
+      .pub-link {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 6px 15px;
+        background: var(--accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 3px;
+        font-size: 0.9em;
+        transition: background 0.3s;
+      }
+
+      .pub-link:hover {
+        background: #a73d42;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 40px 20px;
+        }
+
+        h1 {
+          font-size: 2.2em;
+        }
+
+        .contact {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      .author-legend {
+        font-size: 0.9em;
+        color: #666;
+        background: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Zhenhao Zhang</h1>
+        <div class="contact">
+          <div class="contact-item">
+            <span>📧</span>
+            <a href="mailto:zhenhao.research@gmail.com"
+              >zhenhao.research@gmail.com</a
+            >
+          </div>
+          <div class="contact-item">
+            <span>🔬</span>
+            <a href="https://orcid.org/0009-0001-9242-9618" target="_blank"
+              >ORCID: 0009-0001-9242-9618</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <h2>About</h2>
+        <div class="bio">
+          <p>
+            I am a full-time Research Assistant at
+            <a href="https://anpengcheng.cn/">ai{DEAL} Studio</a>
+            at the Southern University of Science and Technology (SUSTech),
+            under the supervision of
+            <a
+              href="https://scholar.google.com/citations?user=8NN-2uYAAAAJ&hl=en"
+              >Prof. Pengcheng An</a
+            >. My research focuses on human-IoT interaction and human-AI
+            interaction for learning, education, accessibility, and general
+            well-being.
+          </p>
+
+          <p style="margin-top: 15px">
+            <p>
+              I have expertise in developing interactive systems using multimodal sensing, large language models, and tangible interfaces. I am open to interdisciplinary collaborations.
+            </p>
+
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Publications</h2>
+        <div class="author-legend">
+          * Co-first Author &nbsp;&nbsp;&nbsp;&nbsp; † Corresponding Author
+        </div>
+        <div class="publication">
+          <div class="pub-title">
+            DOLLama: Fostering Family Anti-Bullying Learning through
+            AI-Augmented, Toy-Mediated Educational Drama
+          </div>
+          <div class="pub-authors">
+            Di Liu*, <u><b>Zhenhao Zhang*</b></u
+            >, Zhuoyi Zhang, Yufei Hu, Keming Jiao, Xueliang Li, and Pengcheng
+            An†
+          </div>
+          <div class="pub-venue">
+            In Proceedings of the 2026 CHI Conference on Human Factors in
+            Computing Systems (CHI '26)
+          </div>
+          <div class="pub-details">
+            23 Pages. ACM, New York, NY, USA. DOI:
+            https://doi.org/10.1145/3772318.3790687
+          </div>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">
+            Living with Data: Exploring Physicalization Approaches to Sedentary
+            Behavior Intervention for Older Adults in Everyday Life
+          </div>
+          <div class="pub-authors">
+            Siying Hu and <u><b>Zhenhao Zhang</b></u>
+          </div>
+          <div class="pub-venue">
+            In Proceedings of the 2026 CHI Conference on Human Factors in
+            Computing Systems (CHI '26)
+          </div>
+          <div class="pub-details">
+            19 pages. ACM, New York, NY, USA. DOI:
+            https://doi.org/10.1145/3772318.3791978
+          </div>
+          <a href="https://arxiv.org/pdf/2509.11059" class="pub-link">PDF</a>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">
+            Anger Speaks Louder? Exploring the Effects of AI Nonverbal Emotional
+            Cues on Human Decision Certainty in Moral Dilemmas
+          </div>
+          <div class="pub-authors">
+            Chenyi Zhang*, <u><b>Zhenhao Zhang*</b></u
+            >, Wei Zhang, Tian Zeng, Black Sun, and Pengcheng An†
+          </div>
+          <div class="pub-venue">
+            In Companion of the 2025 ACM International Joint Conference on
+            Pervasive and Ubiquitous Computing (UbiComp Companion '25)
+          </div>
+          <div class="pub-details">
+            5 Pages. ACM, New York, NY, USA. DOI:
+            https://doi.org/10.1145/3714394.3754387
+          </div>
+          <a href="https://dl.acm.org/doi/epdf/10.1145/3714394.3754387" class="pub-link">PDF</a>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">
+            TherAIssist: Assisting Art Therapy Homework and Client-Practitioner Collaboration through Human-AI Interaction
+          </div>
+          <div class="pub-authors">
+            Di Liu*, Jingwen Bai*, Zhuoyi Zhang, Yilin Zhang, <u><b>Zhenhao Zhang</u></b>, Jian Zhao, and Pengcheng An†
+          </div>
+          <div class="pub-venue">Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, Vol. 9, No. 3 (2025)</div>
+          <div class="pub-details">
+            Article 113, 38 pages. DOI: https://doi.org/10.1145/3749497
+          </div>
+          <a href="https://dl.acm.org/doi/epdf/10.1145/3749497" class="pub-link">PDF</a>
+        </div>
+
+        <div class="publication">
+          <div class="pub-title">
+            Creating an Authoring Tool for K-12 Teachers to Design ML-Supported Scientific Inquiry Learning
+          </div>
+          <div class="pub-authors">
+            Xiaofei Zhou, Jingwan Tang, Hanjia Lyu, Xinyi Liu, <u><b>Zhenhao Zhang</u></b>, Lichen  Qin, Fiona Au, Advait Sarkar, and Zhen Bai†
+          </div>
+          <div class="pub-venue">
+            In Extended Abstracts of the CHI Conference on Human Factors in Computing Systems (CHI EA '24)
+          </div>
+          <div class="pub-details">
+            7 Pages. ACM, New York, NY, USA. DOI:
+            https://doi.org/10.1145/3613905.3650762
+          </div>
+          <a href="https://dl.acm.org/doi/epdf/10.1145/3613905.3650762" class="pub-link">PDF</a>
+        </div>
+
+      </section>
+          <section>
+            <h2>Patent</h2>
+            
+            <div class="publication">
+                <div class="pub-title">Face Image Processing Method based on Intelligent Human-Machine Interaction</div>
+                <div class="pub-authors">Shanshan Tu, Yutong Zhang, Vacas Muhammad, <u><b>Zhenhao Zhang</u></b>, Yan Shi, and Yongji Zhang</div>
+                <div class="pub-venue">Patent Number: CN 111428661 A</div>
+                <div class="pub-details">Filed: MAR 28, 2020 | Granted: July 17, 2020 | Assignee: Beijing University of Technology</div>
+                <a href="https://patentimages.storage.googleapis.com/8c/54/73/789288a89db41a/CN111428661A.pdf" class="pub-link">View Patent</a>
+            </div>
+        </section>
+
+      <section>
+        <h2>Manuscripts</h2>
+        <div class="author-legend">
+          * Co-first Author &nbsp;&nbsp;&nbsp;&nbsp; † Corresponding Author
+        </div>
+        <div class="manuscript">
+          <div class="pub-title">
+            DOLLama Demo: An AI-Driven Projection System Augmenting Toy-Mediated Educational Drama in Support of Family Anti-Bullying Learning
+          </div>
+          <div class="pub-authors">Di Liu*, <u><b>Zhenhao Zhang*</b></u
+            >, Zhuoyi Zhang, Yufei Hu, Keming Jiao, Xueliang Li, and Pengcheng
+            An†</div>
+          <div class="pub-venue">Under Review</div>
+          <div class="pub-details">
+            Submitted to CHI Interactive Demos, 2026
+          </div>
+        </div>
+
+        <div class="manuscript">
+          <div class="pub-title">
+            The Anatomy of Conversational Scams: A Topic-Based Red Teaming Analysis of Multi-Turn Interactions in LLMs
+          </div>
+          <div class="pub-authors">Xiangzhe Yuan, <u><b>Zhenhao Zhang</b></u
+            >, Haoming Tang, Siying Hu†</div>
+          <div class="pub-venue">Under Review</div>
+          <div class="pub-details">
+            Submitted to ACL ARR full paper track, 2026
+          </div>
+          <a href="https://arxiv.org/pdf/2601.03134" class="pub-link">Preprint</a>
+        </div>
+
+        <div class="manuscript">
+          <div class="pub-title">
+            Vocabuild: Reframing Ambiguity as Discovery in Tangible Vocabulary Construction
+          </div>
+          <div class="pub-authors">Siying Hu, Jian Ma, Xiangzhe Yuan, Jiajun Wang, <u><b>Zhenhao Zhang</b></u
+            ></div>
+          <div class="pub-venue">Under Review</div>
+          <div class="pub-details">
+            Submitted to DIS full paper track, 2026
+          </div>
+        </div>
+
+        <div class="manuscript">
+          <div class="pub-title">
+            OmniUIBench: A Multi-Platform Benchmark for Hierarchical and Semantic Parsing of GUI Screens
+          </div>
+          <div class="pub-authors">Yuanguo Kuang, Shihao Wang, Kaile WANG, <u><b>Zhenhao Zhang</b></u
+            >, Yushan Zhou, Wentong Li, LIK-HANG LEE†</div>
+          <div class="pub-venue">Under Review</div>
+          <div class="pub-details">
+            Submitted to CVPR full paper track, 2025
+          </div>
+        </div>
+
+        <div class="manuscript">
+          <div class="pub-title">
+            DOLLama Demo: An AI-Driven Projection System Augmenting Toy-Mediated Educational Drama in Support of Family Anti-Bullying Learning
+          </div>
+          <div class="pub-authors">Siying Hu and <u><b>Zhenhao Zhang</b></u
+            ></div>
+          <div class="pub-venue">Ongoing Work</div>
+          <a href="https://arxiv.org/pdf/2509.11027" class="pub-link">Preprint</a>
+      </section>
+    </div>
+  </body>
+</html>
